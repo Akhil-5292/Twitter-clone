@@ -30,7 +30,7 @@ const Trends = () => {
     },
     {
       id: 4,
-      isNotIntrested: false,
+      isNotIntrested: true,
       country: "Trending in Sports",
       keyword: "#ViratKohli",
       totalKeywords: "2000k Tweets",

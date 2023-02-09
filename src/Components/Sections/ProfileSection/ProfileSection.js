@@ -22,7 +22,7 @@ function ProfileSection() {
     <>
     <div className={style.wrapper}>
       <div className={style.feed__header}>
-        <p onClick={()=> nevigate("/") }><WestIcon /></p>
+        <p onClick={()=> nevigate("/Home") }><WestIcon /></p>
         <h2>{Data[getLocalStorageIndex].Name}</h2>
       </div>
         <img className={style.container} alt="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png" />

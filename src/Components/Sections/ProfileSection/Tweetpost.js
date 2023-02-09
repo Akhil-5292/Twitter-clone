@@ -14,7 +14,7 @@ import { useState } from "react";
 // import TweetReply from '../../../Atom/TweetReply/TweetReply';
 // import CustomButton from '../../../Atom/Button/CustomButton';
 function Tweetpost() {
-  const [post, setPost] = useState(tweetPosts);
+  const [post, setPost] = useState(JSON.parse(localStorage.getItem("constTweetPosts")));
   const getLocalStorageIndex=useRecoilValue(forLocalStorageIndex)
   let Data = JSON.parse(localStorage.getItem("user"));
 

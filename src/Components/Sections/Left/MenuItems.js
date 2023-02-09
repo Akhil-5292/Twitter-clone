@@ -29,7 +29,7 @@ function LeftSec() {
   console.log( getLocalStorageIndex)
   
   const menu = [
-    { id: 1, icon: <FaHouseUser />, Name: <p onClick={()=> nevigate("/") }>Home</p> },
+    { id: 1, icon: <FaHouseUser />, Name: <p onClick={()=> nevigate("/Home") }>Home</p> },
     { id: 2, icon: <FaHashtag />, Name: "Explore" },
     { id: 3, icon: <VscBellDot />, Name: "Notifications" },
     { id: 4, icon: <HiOutlineMail />, Name: "Message" },
@@ -61,7 +61,7 @@ function LeftSec() {
           <div className={style.innerContainer2}>
             <div className={style.logo}>
              
-              <p onClick={()=> nevigate("/") }> <FaTwitter /></p>
+              <p onClick={()=> nevigate("/Home") }> <FaTwitter /></p>
             </div>
 
             {menu.map((menu,index) => {
