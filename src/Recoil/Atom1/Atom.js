@@ -3,7 +3,7 @@ import { atom } from "recoil";
 
 export const isLoginAtom = atom({ //
   key: "isLogin",
-  default:false,
+  default:true,
 });
 
 /*use value in TwitterPost.js(middleContainer) Take value from WhatHappening.js(WhatHappening) for use in useEffect for render again 

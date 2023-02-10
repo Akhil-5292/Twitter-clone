@@ -8,7 +8,7 @@
     justify-content: center;
 }
 .container1{
-   
+
     width: 35.6rem;
     height: 37.6rem;
     border-radius: 1rem;
@@ -123,4 +123,80 @@ padding-left: 0px;
     border: 1px gray solid;
     border-radius: 0.3rem;
     margin-bottom: 1rem;
+}
+
+.DOB h4{
+    color: white
+}
+.DOB p{
+    color: grey;
+     width: 27rem;
+}
+.Dob_container{
+ display: flex;
+ gap: 1rem;
+    
+}
+
+@media screen and (max-width:760px) {
+    .container{
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+        background-color: #000000;
+    }
+    .container1{
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+    }
+   
+    .containerpass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .input2{
+        width: 350px;
+        height: 60px;
+    }
+    .input1{
+        width: 350px;
+        height: 60px;
+    }
+    .loginbtn{
+        width: 350.400px;
+        height: 50.6px;
+    }
+    .formbtn{
+        width: 22.4rem;
+        height: 3.12rem;
+    }
+    .toggle h6{
+        margin-left: 13rem;
+        margin-top: 0.5rem; 
+        font-size: 15px;
+        cursor: pointer;
+    
+    }
+    .DOB h4{
+        color: white
+    }
+    .DOB p{
+        color: grey;
+         width: 22rem;
+    }
+    .Dob_container{
+        width: 22rem;
+        gap: 0rem;
+        margin-top: 0.5rem;
+       }
+
 }

@@ -111,3 +111,49 @@
     color: white;
     border: 1px gray solid;
 }
+
+@media screen and (max-width:760px) {
+    .container{
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+        background-color: #000000;
+    }
+    .container1{
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .containerpass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .input2{
+        width: 350px;
+        height: 60px;
+        background-color: black;
+        color: white;
+        border: 1px gray solid;
+    }
+    .loginbtn{
+        width: 350.400px;
+        height: 50.6px;
+        border-radius: 1.5rem;
+        border: none;
+        outline: none;
+        font-size: 18px;
+    }
+}

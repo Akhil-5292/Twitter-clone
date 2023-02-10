@@ -240,9 +240,9 @@ function Register() {
                       <span style={{ color: "red" }}>{passwordError}</span>
                     </div>
                     <div>
-                      <div>
-                        <h4 style={{ color: "white" }}>Date of birth</h4>
-                        <p style={{ color: "grey", width: "27rem" }}>
+                      <div className={style.DOB}>
+                        <h4>Date of birth</h4>
+                        <p>
                           This will not be shown publicly. Confirm your own age,
                           even if this account is for a business, a pet, or
                           something else.
@@ -250,7 +250,7 @@ function Register() {
                       </div>
                     </div>
                   </div>
-                  <div className={styleDob.container}>
+                  <div className={style.Dob_container}>
                     <Month handleOnchange={handleMonth} />
                     <Date handleOnchange={handleDate} />
                     <Dayy handleOnchange={handleDay} />
