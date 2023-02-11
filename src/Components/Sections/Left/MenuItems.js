@@ -18,6 +18,8 @@ import DialogBox from "../../Dialog/DialogBox";
 import { useNavigate } from "react-router-dom";
 import {forLocalStorageIndex} from "../../../Recoil/Atom1/Atom"
 import { useRecoilValue } from "recoil";
+import { Fab } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function LeftSec() {
@@ -29,7 +31,7 @@ function LeftSec() {
   console.log( getLocalStorageIndex)
   
   const menu = [
-    { id: 1, icon: <FaHouseUser />, Name: <p onClick={()=> nevigate("/Home") }>Home</p> },
+    { id: 1, icon: <FaHouseUser/>, Name: <p onClick={()=> nevigate("/Home") }>Home</p> },
     { id: 2, icon: <FaHashtag />, Name: "Explore" },
     { id: 3, icon: <VscBellDot />, Name: "Notifications" },
     { id: 4, icon: <HiOutlineMail />, Name: "Message" },
@@ -79,6 +81,11 @@ function LeftSec() {
               customCss={style.sidebar__tweet}
               btnNext={handleClickOpen}
             />
+            <p className={style.floatBtn}>
+             <Fab style={{marginLeft:'1.5rem',width:'2rem',height:'2rem'}} 
+             onClick={handleClickOpen} className={style.float}>
+                <EditIcon />
+                </Fab></p>
             <div className={style.Dialog}>
               <Dialog
                 open={isOpen}
@@ -90,6 +97,7 @@ function LeftSec() {
                 }}
               >
                 <Tweet />
+          
               </Dialog>
             </div>
           </div>
@@ -98,7 +106,7 @@ function LeftSec() {
               picture={
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  src="https://tinypng.com/images/social/website.jpg"
                 />
               }
               text={Data[getLocalStorageIndex].Name}

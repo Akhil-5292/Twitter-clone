@@ -8,7 +8,6 @@
     gap: 1.5rem;
     overflow-y: scroll;
     width: 400px;   
- 
 }
 .container::-webkit-scrollbar{
     display: none;
@@ -19,3 +18,19 @@
     color: gray;
     width: 21.1rem;
 }
+
+@media only screen and (max-width:660px) {
+    .container{
+    display: none; 
+    }
+   }
+
+   @media only screen and (max-width:920px) {
+    .container{
+        width: 310px;
+    }
+    .copyright{
+        width: 18rem;
+        margin-left: 0.5rem;
+    }
+   }

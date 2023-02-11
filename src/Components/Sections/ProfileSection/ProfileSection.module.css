@@ -30,7 +30,8 @@
   }
   .Avatarsection{
       display: flex;
-      gap: 20rem;
+      justify-content: space-between;
+      /* gap: 20rem; */
   }
   .img{
      width: 8rem;
@@ -66,4 +67,14 @@
   }
   .followerscont{
     margin-top: 1.2rem;
+  }
+
+  @media only screen and (max-width:760px) {
+    .btn{
+      display: none;
+    }
+
+  .wrapper{
+    flex-wrap: wrap;
+    }
   }

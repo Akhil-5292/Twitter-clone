@@ -21,10 +21,32 @@
     color: rgb(102, 102, 192);
   }
   .img{
-  padding-left: 4rem;
-  
+  /* padding-left: 4rem; */
+  /* border: 1px solid; */
+  width: 25rem;
+    height: 25rem;
+    border-radius: 15px;
+ 
   }
   .avatar{
     z-index: -1;
   }
+   
+   .picture{
+    /* width: 25rem;
+    height: 20rem;
+    padding-left: 4rem; */
+    width: 25rem;
+    height: 25rem;
+    border-radius: 15px;
+    margin-left: 1rem;
+  }
+
+  @media screen and(max-width:760px) {
+    .picture{
+      width: 100%;
+    
+    }
+  }
+  
   

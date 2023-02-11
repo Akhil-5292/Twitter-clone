@@ -147,11 +147,7 @@ function handleClickOpen (index) {
             <div className={style.img}>
               {data.tweetPic ? 
               <img
-                style={{
-                  width: "30rem",
-                  height: "30rem",
-                  borderRadius: "15px",
-                }}
+                className={style.pic}
                 alt="picture"
                 src={data.tweetPic}
               /> : <></> }

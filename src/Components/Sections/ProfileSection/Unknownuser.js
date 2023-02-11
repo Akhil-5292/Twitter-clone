@@ -53,7 +53,8 @@ function forReply(takeData)
         <span className={style.Avatarsection}>
           <img
             className={style.img}
-            src = {unknownProfileData.tweetPic}/>
+            src = {unknownProfileData.tweetPic}
+            />
         
          
           <CustomButton customCss={style.btn} buttonText={"Edit profile"} />
@@ -112,7 +113,7 @@ TweetReplies:{
 
             <div className={style2.img}>
               <img
-                style={{ width: "30rem", height: "30rem",borderRadius:"15px" }}
+                className={style2.picture}
                 alt="picture"
                 src={x.tweetPic}
               />

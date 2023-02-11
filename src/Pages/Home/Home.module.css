@@ -19,7 +19,7 @@
     display: none;
 } */
 
-@media screen and(max-width:760px) {
+/* @media screen and(max-width:760px) {
     .Main{
         width: 100%; 
         display: flex;
@@ -37,4 +37,17 @@
         width:34%;
         height: 100%;
     }
+} */
+
+@media only screen and (max-width:550px) {
+    .container{
+        display: none;
+    }
+    .rightContainer{
+        display: none;
+    }
+    .middleContainer{
+        width: 100%;
+    }
+    
 }
