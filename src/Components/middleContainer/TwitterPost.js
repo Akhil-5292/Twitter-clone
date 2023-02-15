@@ -31,13 +31,16 @@ export default function TwitterPost() {
   const[indexForD,setIndexForD]=useState()
   const [newProfile, setNewProfile] = useRecoilState(userProfile);
   const[newindex,setNewIndex]=useState()
-
+  const [isOpen, setIsOpen] = useState(false);
   const[count,setCount]=useState(0)
   
 
-
+  function handleClosebtn() {
+    alert("hiii")
+    setIsOpen(true);
+  }
   function handleLike(takeLikes) {
-    console.log(post[takeLikes.Index])
+
     
     if(post[takeLikes.Index].inrDcr===false)
     {
@@ -46,7 +49,7 @@ export default function TwitterPost() {
      setCountForRender(countForRender+1);
     post[takeLikes.Index].inrDcr=true;
     post[takeLikes.Index].color="red"
-    console.log(post)
+
     
     }
    
@@ -57,7 +60,7 @@ export default function TwitterPost() {
      
      setCountForRender(countForRender+1)
      post[takeLikes.Index].inrDcr=false;
-     post[takeLikes.Index].color="blue"
+     post[takeLikes.Index].color="rgb(60,60,60)"
 
     }
   }
@@ -65,7 +68,7 @@ export default function TwitterPost() {
   useEffect(() => {
     fetchData();
   }, [newPost]);
-console.log(newPost)
+
   function fetchData() {
     setPost(JSON.parse(localStorage.getItem("constTweetPosts")));
   }
@@ -85,10 +88,6 @@ console.log(newPost)
   
   function handleClickOpen1()
   {
-    //post[newindex].isOpen=true
-    
-    //console.log(post[index].id)
-   // console.log(index)
     setId(newindex);
     setIndexForD(newindex)
   }
@@ -97,20 +96,15 @@ function handleClickOpen (index) {
   post[index].isOpen=true
    setCount(count+1)
    setNewIndex(index)
-
-  
-
-
   };
 
   return (
     <>
       {post.map((data,i) => {
         return (
-          <div className={style.wrapper}>
-            <div className={style.container1}>
+          <div key={i} className={style.wrapper}>
+            <div className={style.containerwrapp}>
               <div
-                // onClick={handleRedirectProfile}
                 onClick={() =>
                   xyz({
                     name: data.name,
@@ -136,7 +130,7 @@ function handleClickOpen (index) {
                 <span className={style.text}>
                   <h3>
                     {data.name}
-                    <VerifiedIcon style={{ color: "blue" }} />
+                    <VerifiedIcon style={{ color: "#1D9BF0" , width:"1rem"}} />
                   </h3>
                 </span>
                 <h4>{data.handlerName}</h4>
@@ -147,7 +141,7 @@ function handleClickOpen (index) {
             <div className={style.img}>
               {data.tweetPic ? 
               <img
-                className={style.pic}
+              className={style.img1}
                 alt="picture"
                 src={data.tweetPic}
               /> : <></> }
@@ -157,17 +151,20 @@ function handleClickOpen (index) {
                 {data.tweetCount}
                 <ChatBubbleOutlineIcon onClick={(()=>handleClickOpen(i))} />
                 <div className={style.Dialog}>
-                  {console.log(data.isOpen)}
-              <Dialog
-                open={data.isOpen}
+     
+                  <Dialog
+                    className={style.dialogBoxContainer}
+                open={!!data?.isOpen}
                 onClose={handleClose}
                 style={{
-                  background: "rgba(91, 112, 131, 0.4)",
+                  // background: "rgba(91, 112, 131, 0.4)",
                   fontSize: "15px",
                   lineHeight: "40px",
+                  height: "100vh",
+              
                 }}
               >
-                <TweetReply />
+                <TweetReply onClick={handleClosebtn}/>
               </Dialog>
             </div>
               </div>

@@ -30,8 +30,7 @@
   }
   .Avatarsection{
       display: flex;
-      justify-content: space-between;
-      /* gap: 20rem; */
+      gap: 20rem;
   }
   .img{
      width: 8rem;
@@ -69,12 +68,14 @@
     margin-top: 1.2rem;
   }
 
-  @media only screen and (max-width:760px) {
+  @media only screen and (max-width: 768px){
+    /* .Avatarsection{
+      display: flex;
+      gap: 2rem;
+  } */
+   
     .btn{
-      display: none;
+display: none;
     }
 
-  .wrapper{
-    flex-wrap: wrap;
-    }
   }

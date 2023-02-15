@@ -19,15 +19,26 @@
     display: none;
 }
 
-@media only screen and (max-width:760px) {
+@media only screen and (max-width: 768px){
+
     .container{
-       display: none;
+      display: none;
+       
     }
     
     .middleContainer{
         width: 100%;
     }
     .rightContainer{
-      display: none;
+   display: none;
     }
+
+
+
+
+
 }
+
+
+
+

@@ -13,31 +13,32 @@ import style from "./MenuItem.module.css";
 import Dialog from "@mui/material/Dialog";
 import { VscBellDot } from "react-icons/vsc";
 import { Avatar } from "@mui/material";
-import CustomButton2 from "../../../Atom/Button/CustomButton2";
-import DialogBox from "../../Dialog/DialogBox";
+// import CustomButton2 from "../../../Atom/Button/CustomButton2";
 import { useNavigate } from "react-router-dom";
 import {forLocalStorageIndex} from "../../../Recoil/Atom1/Atom"
 import { useRecoilValue } from "recoil";
-import { Fab } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
+import Dialog2 from "../../Dialog2/Dialog2";
+// import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
+import Card from "../../../Atom/Card/card";
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+
 
 
 function LeftSec() {
   const nevigate = useNavigate();
   let Data = JSON.parse(localStorage.getItem("user"));
   const getLocalStorageIndex=useRecoilValue(forLocalStorageIndex)
- // console.log(Data)
-  //console.log(Data[2].Name)
   console.log( getLocalStorageIndex)
   
   const menu = [
-    { id: 1, icon: <FaHouseUser/>, Name: <p onClick={()=> nevigate("/Home") }>Home</p> },
+    { id: 1, icon: <p onClick={()=> nevigate("/Home") }><FaHouseUser /></p> , Name: <p onClick={()=> nevigate("/Home") }>Home</p> },
     { id: 2, icon: <FaHashtag />, Name: "Explore" },
     { id: 3, icon: <VscBellDot />, Name: "Notifications" },
     { id: 4, icon: <HiOutlineMail />, Name: "Message" },
     { id: 5, icon: <BsBookmark />, Name: "Bookmarks" },
     { id: 6, icon: <TbFileText />, Name: "Lists" },
-    { id: 7, icon: <BsPerson />, Name: <p onClick={()=> nevigate( `/Profile/${paramsValue}`) }>Profile</p> },
+    { id: 7, icon: <p onClick={()=> nevigate( `/Profile/${paramsValue}`) }><BsPerson /></p>, Name: <p onClick={()=> nevigate( `/Profile/${paramsValue}`) }>Profile</p> },
     { id: 8, icon: <CgMoreO />, Name: "More" },
   ];
   const [isOpen, SetisOpen] = useState(false);
@@ -47,15 +48,10 @@ function LeftSec() {
   const handleClose = () => {
     SetisOpen(false);
   };
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClickClose = () => {
-    setOpen(false);
-  };
+
+ 
+ 
   var paramsValue=Data[getLocalStorageIndex]?.Name
-  //console.log(paramsValue)
   return (
     <>
       <div className={style.container}>
@@ -81,40 +77,38 @@ function LeftSec() {
               customCss={style.sidebar__tweet}
               btnNext={handleClickOpen}
             />
-            <p className={style.floatBtn}>
-             <Fab style={{marginLeft:'1.5rem',width:'2rem',height:'2rem'}} 
-             onClick={handleClickOpen} className={style.float}>
-                <EditIcon />
-                </Fab></p>
+                <span className={style.floatIcon}>  <Fab onClick={handleClickOpen} color="primary" aria-label="add">
+                  <AddIcon />
+                   </Fab></span>
+
             <div className={style.Dialog}>
               <Dialog
-                open={isOpen}
+                open={!!isOpen}
                 onClose={handleClose}
                 style={{
                   background: "rgba(91, 112, 131, 0.4)",
                   fontSize: "15px",
                   lineHeight: "40px",
                 }}
+                className={style.fullScreenDialog}
               >
-                <Tweet />
-          
+                <Tweet onClick={handleClose}/>
               </Dialog>
             </div>
           </div>
-          <div>
-            <CustomButton2
+          <div >
+            <Card
               picture={
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://tinypng.com/images/social/website.jpg"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgBhcplevwUKGRs1P-Ps8Mwf2wOwnW_R_JIA&usqp=CAU"
                 />
               }
               text={Data[getLocalStorageIndex].Name}
               text2={Data[getLocalStorageIndex].Email}
-              button={handleOpen}
               customCss={style.button2}
             />
-            <DialogBox open={open} onClose={handleClickClose} />
+           
           </div>
         </div>
       </div>

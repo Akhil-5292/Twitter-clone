@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import style from "./Trends.module.css";
-
+import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import Dialog2 from "../../Dialog2/Dialog2";
 import CustomButton from "../../../Atom/Button/CustomButton";
 
@@ -44,26 +44,29 @@ const Trends = () => {
     },
   ]);
   const [selectedId, setSelectedId] = useState(null);
-  const [trending , setTrendings] = useState(isNotIntrested.slice(0,2))
-  const [isShowingAllTrendings , setIsShowingAllTrendings] = useState(false)
+  const [trending , setTrendings] = useState(isNotIntrested)
+  const [isShowingAllTrendings, setIsShowingAllTrendings] = useState(false)
   const updateId = (id) => setSelectedId(id);
-
+  const[data,setData]=useState([...trending])
   const HandleClick = () => {
     const tempArr = [];
-    isNotIntrested.forEach((el) => {
+    trending.forEach((el) => {
       if (el.id !== selectedId) {
         tempArr.push(el);
       }
     });
-    setIsNotIntrested(tempArr);
+    setTrendings(tempArr);
+    setData(tempArr)
   };
+
+
 
   function handleRequestSeeAll () {
     setIsShowingAllTrendings(!isShowingAllTrendings)
     if(isShowingAllTrendings) {
-       return setTrendings(isNotIntrested.slice(0,2))
-    }
-    setTrendings(isNotIntrested)
+       return setTrendings(trending.slice(0,3))
+    }else
+    setTrendings(data)
 }
 
   return (
@@ -75,6 +78,7 @@ const Trends = () => {
         {trending.map((keyword) => {
           return (
             <div
+            key={keyword.id}
               className={style.container}
               onClick={() => {
                 updateId(keyword.id);
@@ -90,7 +94,21 @@ const Trends = () => {
                 </div>
               </div>
               <div className={style.btn}>
-                <Dialog2 onClick={HandleClick} />
+              <Dialog2
+                  onClick={HandleClick}
+                  title={
+                    <div>
+                      <SentimentVeryDissatisfiedIcon /> This trend is harmful or
+                      spammy
+                    </div>
+                  }
+                  content={
+                    <p>
+                      <SentimentVeryDissatisfiedIcon />
+                      Is not Intrested
+                    </p>
+                  }
+                />
               </div>
             </div>
           );

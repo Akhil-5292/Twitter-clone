@@ -53,8 +53,7 @@ function forReply(takeData)
         <span className={style.Avatarsection}>
           <img
             className={style.img}
-            src = {unknownProfileData.tweetPic}
-            />
+            src = {unknownProfileData.tweetPic}/>
         
          
           <CustomButton customCss={style.btn} buttonText={"Edit profile"} />
@@ -75,8 +74,7 @@ function forReply(takeData)
               
 
         return (
-          <>
-          
+          <>   
             <div key={x.id}>
             <div className={style2.wrapper} onClick={()=>forReply(({
 name:unknownProfileData.name,
@@ -105,7 +103,7 @@ TweetReplies:{
 
               <div className={style2.innercontainer}>
                 <span className={style2.text}>
-                  <h3>{unknownProfileData.name}<VerifiedIcon style={{color:"blue"}}/></h3>
+                  <h3>{unknownProfileData.name}<VerifiedIcon style={{color: "#1D9BF0" , width:"1rem" }}/></h3>
                 </span>
                 <p>{x.tweetText}</p>
               </div>
@@ -113,7 +111,7 @@ TweetReplies:{
 
             <div className={style2.img}>
               <img
-                className={style2.picture}
+              className={style2.img1}
                 alt="picture"
                 src={x.tweetPic}
               />

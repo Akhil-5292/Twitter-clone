@@ -10,6 +10,7 @@
     /* margin-top: 2rem; */
     position: absolute;
     bottom: -9.5rem;
+    
 }
 .btn2container:hover{
     background-color: gray;
@@ -23,10 +24,4 @@
     color: white;
     gap: 0.2rem;
     font-size: smaller;
-}
-
-@media  only screen and (max-width:760px) {
-    .btn2container{
-        width: auto;
-    }
 }
